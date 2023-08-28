@@ -2,7 +2,7 @@
 
 ## Intro
 
-The objective is to create a Node CLI tool to generate JSON schemas from JSON samples and documentation using GPT. 
+Node CLI tool to generate JSON schemas from JSON samples and documentation using GPT. 
 
 1. Infer base JSON schema from JSON samples as any other JSON schema generator.
 2. Retrieve documentation about the JSON samples using embeddings.
@@ -25,16 +25,10 @@ Sure, here it is a JSON schema for Cart Create:
 
 ```json
 {
-    "schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
-    "description": "Schema for an example event",
-    "self": {
-        "vendor": "com.snowplowanalytics",
-        "name": "example_event",
-        "format": "jsonschema",
-        "version": "1-0-0"
-    },
     "type": "object",
-    "properties": {}
+    "properties": {
+        "etc": {}
+    }
 }
 ```
 
@@ -50,12 +44,7 @@ Sure, here it is a JSON schema for Cart Create:
 
 ## Notes
 
-This is mostly inspired from the need of generating JSON schemas for Snowplow, but it can apply to anything that needs schemas for either validation or feeding them to GPT or whatever.
-
-- https://docs.snowplow.io/docs/understanding-your-pipeline/schemas/#the-anatomy-of-a-schema
-- http://iglucentral.com/
-
-But also GPT uses a lot of schemas for function calling so this can expand on that and generate schemas not only from JSON samples, but also from different context.
+This is mostly inspired from the need of generating JSON schemas for data validation, but also GPT uses schemas for function calling so this can expand on that and generate schemas not only from JSON samples, but also from different contexts, like file directories or config files.
 
 ## Tech Stack
 
